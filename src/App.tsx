@@ -11,9 +11,9 @@ function App() {
     <div className="min-h-screen bg-dark text-white">
       <Navigation />
       <Hero />
-      <WorkingProcess />
       <Projects />
       <Milestones />
+      <WorkingProcess />
       <FAQ/>
     </div>
   );
