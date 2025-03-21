@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Milestones from './components/Milestones';
 import FAQ from './components/FAQ';
 import Services from './components/Services';
+import ContactCTA from './components/ContactCTA';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Services/>
       <WorkingProcess />
       <FAQ/>
+      <ContactCTA/>
     </div>
   );
 }
