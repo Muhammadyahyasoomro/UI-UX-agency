@@ -1,0 +1,22 @@
+import React from 'react';
+import Navigation from './components/Navigation';
+import Hero from './components/Hero';
+import WorkingProcess from './components/WorkingProcess';
+import Projects from './components/Projects';
+import Milestones from './components/Milestones';
+import FAQ from './components/FAQ';
+
+function App() {
+  return (
+    <div className="min-h-screen bg-dark text-white">
+      <Navigation />
+      <Hero />
+      <WorkingProcess />
+      <Projects />
+      <Milestones />
+      <FAQ/>
+    </div>
+  );
+}
+
+export default App;
