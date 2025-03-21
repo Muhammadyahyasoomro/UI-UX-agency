@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { ArrowRight } from "lucide-react";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 
 const projects = [
@@ -23,56 +21,16 @@ const projects = [
 ];
 
 const Projects = () => {
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [projectsRef, projectsInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.3,
-  });
-
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (projectsInView) {
-      setIsAnimating(true);
-      document.body.style.overflow = "hidden"; // Stop scrolling
-      controls.start("animate").then(() => {
-        setIsAnimating(false);
-        document.body.style.overflow = "auto"; // Resume scrolling after animation
-      });
-    }
-  }, [projectsInView, controls]);
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start center", "end center"] });
 
   return (
-    <section ref={projectsRef} className="py-20 relative">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center mb-16">
-          <h2 className="text-3xl font-bold">Featured Projects</h2>
-          <motion.button
-            whileHover={{ x: 10 }}
-            className="flex items-center gap-2 text-primary"
-          >
-            View all Projects <ArrowRight className="w-5 h-5" />
-          </motion.button>
-        </div>
-
-        {/* Project Cards Animation */}
-        <motion.div
-          initial="hidden"
-          animate={controls}
-          variants={{
-            hidden: { opacity: 0, y: 50 },
-            animate: {
-              opacity: 1,
-              y: 0,
-              transition: { staggerChildren: 0.5, ease: "easeOut" },
-            },
-          }}
-          className="flex flex-col gap-8 items-center"
-        >
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
-          ))}
-        </motion.div>
+    <section ref={ref} className="relative h-[300vh]">
+      {/* Sticky Container */}
+      <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
+        {projects.map((project, index) => (
+          <ProjectCard key={index} project={project} index={index} scrollProgress={scrollYProgress} cardIndex={index} />
+        ))}
       </div>
     </section>
   );
