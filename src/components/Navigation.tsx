@@ -25,6 +25,23 @@ const Navigation = () => {
       {/* Logo */}
       <div className="text-orange-500 text-2xl font-bold">Oneclick</div>
 
+      {/* Desktop Navigation Menu (Visible only on larger screens) */}
+      <div className="hidden sm:flex gap-8">
+        {"about projects services".split(" ").map((tab) => (
+          <a
+            key={tab}
+            href={`#${tab}`}
+            onClick={() => setActiveTab(tab)}
+            className={`text-white text-base hover:text-gray-300 transition relative ${
+              activeTab === tab ? "text-orange-500 font-bold" : ""
+            }`}
+          >
+            {tab.charAt(0).toUpperCase() + tab.slice(1)}
+            {activeTab === tab && <span className="absolute left-0 bottom-0 w-full h-0.5 bg-orange-500"></span>}
+          </a>
+        ))}
+      </div>
+
       {/* Mobile Menu Toggle */}
       <button className="sm:hidden text-white z-[60]" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <X size={24} /> : <Menu size={24} />}
