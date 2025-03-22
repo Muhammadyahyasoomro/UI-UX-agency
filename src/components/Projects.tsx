@@ -25,7 +25,7 @@ const Projects = () => {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start center", "end center"] });
 
   return (
-    <section ref={ref} className="relative h-[300vh]">
+    <section id="projects" ref={ref} className="relative h-[300vh]">
       {/* Sticky Container */}
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
         {projects.map((project, index) => (
