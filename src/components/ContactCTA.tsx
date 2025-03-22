@@ -13,7 +13,7 @@ const ContactCTA = () => {
     </div>
     
     <p className="mt-8 ms-24 text-xl ">
-         <span className="text-white">email :talhahanif120@gmail.com</span>
+         <span className="text-white text-center">Email :Talhahanif120@gmail.com</span>
       </p>
     </div>
   );
