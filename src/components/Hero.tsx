@@ -3,15 +3,16 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div id="about" className="container mx-auto px-4 min-h-[80vh] flex items-center">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+    <div id="about" className="container mx-auto px-4 min-h-[80vh] flex items-center justify-center">
+      <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl w-full text-center md:text-left">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
+          className="flex flex-col items-center md:items-start"
         >
-          <h1 className="text-5xl font-bold mb-4">Hi, I'm Talha Hanif</h1>
-          <h2 className="text-6xl font-bold text-orange-500 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Hi, I'm Talha Hanif</h1>
+          <h2 className="text-4xl md:text-6xl font-bold text-orange-500 mb-6">
             UI/UX Designer
           </h2>
           <p className="text-gray-400 text-lg mb-8 max-w-lg">
@@ -34,7 +35,7 @@ const Hero = () => {
             opacity: 1,
           }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
-          className="relative w-full max-h-[500px] rounded-2xl overflow-hidden"
+          className="relative w-full max-w-[450px] md:max-w-[500px] mx-auto md:mx-0 rounded-2xl overflow-hidden"
         >
           <img
             src="hero.jpg"
