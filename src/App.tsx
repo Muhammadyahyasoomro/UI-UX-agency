@@ -8,6 +8,7 @@ import FAQ from './components/FAQ';
 import Services from './components/Services';
 import ContactCTA from './components/ContactCTA';
 
+
 function App() {
   return (
     <div className="min-h-screen bg-dark text-white">
@@ -17,6 +18,7 @@ function App() {
       <Milestones />
       <Services/>
       <WorkingProcess />
+
       <FAQ/>
       <ContactCTA/>
     </div>
