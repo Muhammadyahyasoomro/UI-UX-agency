@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 
 const projects = [
@@ -25,14 +25,29 @@ const Projects = () => {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start center", "end center"] });
 
   return (
-    <section id="projects" ref={ref} className="relative h-[300vh]">
-      {/* Sticky Container */}
-      <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} index={index} scrollProgress={scrollYProgress} cardIndex={index} />
-        ))}
+    <>
+      <section id="projects" ref={ref} className="relative h-[300vh]">
+        {/* Sticky Container */}
+        <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} index={index} scrollProgress={scrollYProgress} cardIndex={index} />
+          ))}
+        </div>
+      </section>
+
+      {/* Centered Button */}
+      <div className="flex justify-center items-center ">
+        <a
+          href="/projects"
+          className="relative px-6 py-3 text-lg font-medium border border-white rounded-full overflow-hidden group"
+        >
+          <span className="relative z-10 text-white transition-colors duration-300 group-hover:text-black">
+            View all Projects →
+          </span>
+          <span className="absolute inset-0 w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+        </a>
       </div>
-    </section>
+    </>
   );
 };
 
