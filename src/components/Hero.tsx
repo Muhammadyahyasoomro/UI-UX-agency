@@ -11,7 +11,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-5xl font-bold mb-4">Hi, I'm Talha Hanif</h1>
-          <h2 className="text-6xl font-bold text-primary mb-6">
+          <h2 className="text-6xl font-bold text-orange-500 mb-6">
             UI/UX Designer
           </h2>
           <p className="text-gray-400 text-lg mb-8 max-w-lg">

@@ -47,7 +47,8 @@ const FAQ = () => {
               {faq.question}
               <motion.span
                 animate={{ rotate: openIndex === index ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: .5 }}
+                className="text-4xl"
               >
                 {openIndex === index ? "−" : "+"}
               </motion.span>

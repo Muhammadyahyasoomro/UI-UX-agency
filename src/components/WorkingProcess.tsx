@@ -42,7 +42,7 @@ const WorkingProcess = () => {
             >
             
                 <h3 className="text-lg font-bold text-white">Step {index + 1}</h3>
-                <h4 className="text-xl font-semibold text-orange-400 flex items-center gap-2">
+                <h4 className="text-xl font-semibold text-orange-500 flex items-center gap-2">
                   {step.title} {step.icon}
                 </h4>
                 <p className="text-sm mt-2 flex-grow">{step.description}</p>
