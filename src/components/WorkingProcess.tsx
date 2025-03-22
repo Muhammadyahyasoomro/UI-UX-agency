@@ -34,9 +34,9 @@ const WorkingProcess = () => {
           <motion.div
             ref={stepsRef}
             className="flex gap-6 flex-nowrap min-w-max"
-            initial={{ x: "-100%" }}
+            initial={{ x: "100%" }}
             animate={controls}
-            transition={{ duration: 2, ease: "easeInOut" }}
+            transition={{ duration: 3, ease: "easeInOut" }}
           >
             {processSteps.map((step, index) => (
               <div
