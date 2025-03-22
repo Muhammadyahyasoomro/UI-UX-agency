@@ -11,32 +11,29 @@ const processSteps = [
 
 const WorkingProcess = () => {
   const sectionRef = useRef(null);
-  const stepsRef = useRef(null);
   const controls = useAnimation();
-
-  const isMilestoneInView = useInView(sectionRef, { margin: "0px 0px -100% 0px" });
+  const isInView = useInView(sectionRef, { margin: "-50% 0px -50% 0px" });
 
   useEffect(() => {
-    if (isMilestoneInView) {
-      controls.start({ x: "0%" }); // Scrolls all cards fully into view
+    if (isInView) {
+      controls.start({ x: "0%" });
     } else {
-      controls.stop();
+      controls.start({ x: "100%" });
     }
-  }, [isMilestoneInView, controls]);
+  }, [isInView, controls]);
 
   return (
     <div ref={sectionRef} className="py-20 text-white relative overflow-hidden">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-10">Working Process</h2>
 
-        {/* Horizontal Scroll Container */}
-        <div className="overflow-hidden w-full">
+        {/* Scrollable Horizontal Container */}
+        <div className=" overflow-hidden overflow-x-auto w-full">
           <motion.div
-            ref={stepsRef}
             className="flex gap-6 flex-nowrap min-w-max"
             initial={{ x: "100%" }}
             animate={controls}
-            transition={{ duration: 3, ease: "easeInOut" }}
+            transition={{ duration: 2, ease: "easeInOut" }}
           >
             {processSteps.map((step, index) => (
               <div
