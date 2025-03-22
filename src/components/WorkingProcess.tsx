@@ -38,7 +38,7 @@ const WorkingProcess = () => {
             {processSteps.map((step, index) => (
               <div
               key={index}
-              className="p-6 min-h-[200px] w-72 bg-gradient-to-b from-white/40 to-black/80 text-white rounded-lg shadow-lg flex flex-col backdrop-blur-md"
+              className="p-6 min-h-[200px] w-72 bg-opacity-100 bg-gradient-to-b from-gray-600 to-[#1111]/80 text-white rounded-lg shadow-lg flex flex-col backdrop-blur-md"
             >
             
                 <h3 className="text-lg font-bold text-white">Step {index + 1}</h3>
