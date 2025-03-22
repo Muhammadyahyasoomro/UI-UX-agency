@@ -31,12 +31,9 @@ const Projects = () => {
         <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} scrollProgress={scrollYProgress} cardIndex={index} />
+           
           ))}
-        </div>
-      </section>
-
-      {/* Centered Button */}
-      <div className="flex justify-center items-center ">
+           <div className="mt-auto flex justify-center items-center ">
         <a
           href="/projects"
           className="relative px-6 py-3 text-lg font-medium border border-white rounded-2xl overflow-hidden group"
@@ -47,6 +44,13 @@ const Projects = () => {
           <span className="absolute inset-0 w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
         </a>
       </div>
+         
+        </div>
+         
+      
+      </section>
+
+    
     </>
   );
 };
