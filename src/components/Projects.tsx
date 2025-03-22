@@ -39,7 +39,7 @@ const Projects = () => {
       <div className="flex justify-center items-center ">
         <a
           href="/projects"
-          className="relative px-6 py-3 text-lg font-medium border border-white rounded-full overflow-hidden group"
+          className="relative px-6 py-3 text-lg font-medium border border-white rounded-lg overflow-hidden group"
         >
           <span className="relative z-10 text-white transition-colors duration-300 group-hover:text-black">
             View all Projects →
