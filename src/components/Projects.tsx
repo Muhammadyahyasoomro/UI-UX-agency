@@ -49,7 +49,7 @@ const Projects = () => {
          
       
       </section>
-      <div className="bg-transparent text-transparent">test</div>
+   
     
     </>
   );
