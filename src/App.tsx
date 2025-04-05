@@ -6,7 +6,11 @@ import Projects from './components/Projects';
 import Milestones from './components/Milestones';
 import FAQ from './components/FAQ';
 import Services from './components/Services';
-import ContactCTA from './components/ContactCTA';
+import { DesignProcessShowcase } from './components/InfiniteScroll';
+import { ThreeDMarqueeDemo } from './components/Preview';
+import { BackgroundBeams } from './components/ui/background-beams';
+import ContactForm from './components/ContactForm';
+
 
 
 function App() {
@@ -15,12 +19,14 @@ function App() {
       <Navigation />
       <Hero />
       <Projects />
+      <ThreeDMarqueeDemo />
       <Milestones />
-      <Services/>
+      <Services />
       <WorkingProcess />
-
-      <FAQ/>
-      <ContactCTA/>
+      <DesignProcessShowcase />
+      <FAQ />
+      <BackgroundBeams />
+      <ContactForm />
     </div>
   );
 }

@@ -18,6 +18,21 @@ const projects = [
     description: "Adventure planning platform",
     image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&auto=format&fit=crop&q=60",
   },
+  {
+    title: "Travel App",
+    description: "Adventure planning platform",
+    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&auto=format&fit=crop&q=60",
+  },
+  {
+    title: "Travel App",
+    description: "Adventure planning platform",
+    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&auto=format&fit=crop&q=60",
+  },
+  {
+    title: "Travel App",
+    description: "Adventure planning platform",
+    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&auto=format&fit=crop&q=60",
+  },
 ];
 
 const Projects = () => {
@@ -31,26 +46,26 @@ const Projects = () => {
         <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} scrollProgress={scrollYProgress} cardIndex={index} />
-           
+
           ))}
-           <div className="mt-auto flex justify-center items-center ">
-        <a
-          href="/projects"
-          className="relative px-6 py-3 text-lg font-medium border border-white rounded-2xl overflow-hidden group"
-        >
-          <span className="relative z-10 text-white transition-colors duration-300 group-hover:text-black">
-            View all Projects →
-          </span>
-          <span className="absolute inset-0 w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
-        </a>
-      </div>
-         
+          <div className="mt-auto flex justify-center items-center ">
+            <a
+              href="/projects"
+              className="relative px-6 py-3 text-lg font-medium border border-white rounded-2xl overflow-hidden group"
+            >
+              <span className="relative z-10 text-white transition-colors duration-300 group-hover:text-black">
+                View all Projects →
+              </span>
+              <span className="absolute inset-0 w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+          </div>
+
         </div>
-         
-      
+
+
       </section>
 
-    
+
     </>
   );
 };
