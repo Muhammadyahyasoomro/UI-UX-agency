@@ -24,25 +24,28 @@ const Hero = () => {
           </button>
         </motion.div>
 
-        {/* Animated Image with Irregular Cut Effect */}
         <motion.div
-          initial={{
-            clipPath: "polygon(20% 0%, 100% 10%, 80% 100%, 0% 90%)",
-            opacity: 0,
-          }}
-          animate={{
-            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-            opacity: 1,
-          }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
-          className="relative w-full max-w-[450px] md:max-w-[500px] mx-auto md:mx-0 rounded-2xl overflow-hidden"
-        >
-          <img
-            src="hero.jpg"
-            alt="Talha Hanif"
-            className="w-full h-full object-cover rounded-2xl"
-          />
-        </motion.div>
+  initial={{
+    clipPath: "polygon(20% 0%, 100% 10%, 80% 100%, 0% 90%)",
+    opacity: 0,
+  }}
+  animate={{
+    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+    opacity: 1,
+  }}
+  transition={{ duration: 1.2, ease: "easeInOut" }}
+  className="relative w-full max-w-[450px] md:max-w-[500px] mx-auto md:mx-0 flex justify-center"
+>
+  <div className="relative w-[320px] h-[420px] flex items-center justify-center shadow-lg">
+    <div className="bg-orange-500 rounded-t-[150px] w-[320px] h-[280px] absolute top-[73%] left-0 transform -translate-y-[70%] z-[-1]"></div>
+    <img
+      src="hero.png"
+      alt="Talha Hanif"
+      className="h-[380px] w-auto object-contain"
+    />
+  </div>
+</motion.div>
+
       </div>
     </div>
   );
