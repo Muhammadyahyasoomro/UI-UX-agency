@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Heading from "./ui/Heading";
 
 const services = [
   {
@@ -38,7 +37,14 @@ const Services = () => {
     <section id="services" className="py-20 text-white bg-[#1111]">
       <div className="container mx-auto px-6 text-center">
         {/* Animated Heading */}
-        <Heading text={"Our Services"} />
+        <motion.h2
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-4xl font-bold text-orange-500 mb-12"
+        >
+          Our Services
+        </motion.h2>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-3 gap-8">
@@ -50,7 +56,7 @@ const Services = () => {
               transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
               viewport={{ once: true }}
               className="relative group p-8 backdrop-blur-lg bg-gradient-to-br from-gray-800/60 to-gray-700/40
-                         rounded-xl shadow-xl border border-gray-700 hover:border-orange-500 transition duration-300 "
+                         rounded-xl shadow-xl border border-gray-700 hover:border-orange-500 transition duration-300"
             >
               {/* Gradient Divider (Except Last One) */}
               {index !== services.length - 1 && (
