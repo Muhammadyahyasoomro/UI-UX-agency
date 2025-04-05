@@ -1,9 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import { TextGenerateEffect } from "./ui/text-generate-effect";
+const words = "I design clean, user-friendly, and eye-catching experiences that make digital interactions effortless."
 const Hero = () => {
   return (
-    <div id="about" className="container mx-auto px-4 min-h-[80vh] flex items-center justify-center">
+    <div id="about" className="container mx-auto px-4 min-h-[80vh] flex items-center justify-center mt-16 ">
       <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl w-full text-center md:text-left">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -11,13 +12,14 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center md:items-start"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Hi, I'm Talha Hanif</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4"> <TextGenerateEffect words={" Hi, I'm Talha Hanif"} />
+          </h1>
           <h2 className="text-4xl md:text-6xl font-bold text-orange-500 mb-6">
             UI/UX Designer
           </h2>
           <p className="text-gray-400 text-lg mb-8 max-w-lg">
-            I design clean, user-friendly, and eye-catching experiences that
-            make digital interactions effortless.
+            <TextGenerateEffect words={words} />
+
           </p>
           <button className="bg-gray-700 text-white px-8 py-3 rounded-2xl hover:bg-gray-600 transition-colors">
             Services
