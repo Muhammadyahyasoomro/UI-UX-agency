@@ -24,7 +24,7 @@ const ContactCTA = () => {
               icon="🔗"
               label="LinkedIn"
               value="Talha Hanif"
-              link="https://www.linkedin.com/in/talhahanif"
+              link="https://www.linkedin.com/in/talha-hanif-59173a221/"
             />
             <ContactItem
               icon="🎨"
