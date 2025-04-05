@@ -81,7 +81,7 @@ const WorkingProcess = () => {
               {/* Step Card */}
               <div className="p-6 min-h-[200px] w-72 bg-opacity-100 bg-gradient-to-b from-gray-600 to-[#1111]/80 text-white rounded-lg shadow-lg flex flex-col backdrop-blur-md snap-center">
                 <h3 className="text-lg font-bold text-white">Step {index + 1}</h3>
-                <h4 className="text-xl font-semibold text-orange-500 flex items-center gap-2">
+                <h4 className="text-xl font-semibold text-[#FF952A] flex items-center gap-2">
                   {step.title} {step.icon}
                 </h4>
                 <p className="text-sm mt-2 flex-grow">{step.description}</p>
@@ -89,7 +89,7 @@ const WorkingProcess = () => {
 
               {/* Arrow (except for the last step) */}
               {index !== processSteps.length - 1 && (
-                <ChevronRight className="w-8 h-8 text-orange-500 mx-2 hidden md:block" />
+                <ChevronRight className="w-8 h-8 text-[#FF952A] mx-2 hidden md:block" />
               )}
             </div>
           ))}

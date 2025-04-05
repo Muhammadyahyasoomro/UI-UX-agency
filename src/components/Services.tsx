@@ -41,7 +41,7 @@ const Services = () => {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-4xl font-bold text-orange-500 mb-12"
+          className="text-4xl font-bold text-white mb-12"
         >
           Our Services
         </motion.h2>
@@ -56,7 +56,7 @@ const Services = () => {
               transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
               viewport={{ once: true }}
               className="relative group p-8 backdrop-blur-lg bg-gradient-to-br from-gray-800/60 to-gray-700/40
-                         rounded-xl shadow-xl border border-gray-700 hover:border-orange-500 transition duration-300"
+                         rounded-xl shadow-xl border border-gray-700 hover:border-[#FF952A] transition duration-300"
             >
               {/* Gradient Divider (Except Last One) */}
               {index !== services.length - 1 && (
@@ -64,7 +64,7 @@ const Services = () => {
               )}
 
               {/* Title */}
-              <h3 className="text-2xl font-semibold text-orange-500 mb-5">
+              <h3 className="text-2xl font-semibold text-[#FF952A] mb-5">
                 {service.title}
               </h3>
 
@@ -72,7 +72,7 @@ const Services = () => {
               <ul className="text-gray-300 text-left space-y-3">
                 {service.items.map((item, i) => (
                   <li key={i} className="flex items-center">
-                    <span className="mr-2 text-orange-400">•</span>
+                    <span className="mr-2 text-[#FF952A]">•</span>
                     {item}
                   </li>
                 ))}

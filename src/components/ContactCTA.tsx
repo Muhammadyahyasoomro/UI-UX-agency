@@ -1,7 +1,7 @@
 const ContactCTA = () => {
   return (
     <div className="bg-black min-h-screen flex items-center justify-center px-4 py-16">
-      <div className="bg-orange-500 p-6 rounded-3xl flex flex-col md:flex-row w-full max-w-6xl gap-8">
+      <div className="bg-[#FF952A] p-6 rounded-3xl flex flex-col md:flex-row w-full max-w-6xl gap-8">
         {/* Left Panel - Contact Info */}
         <div className="flex-1 text-black flex flex-col justify-between gap-6">
           <div>
@@ -48,7 +48,7 @@ const ContactCTA = () => {
             <input
               type="text"
               required
-              className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 focus:outline-orange-500"
+              className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 focus:outline-[#FF952A]"
               placeholder="Your name"
             />
           </div>
@@ -57,7 +57,7 @@ const ContactCTA = () => {
             <input
               type="email"
               required
-              className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 focus:outline-orange-500"
+              className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 focus:outline-[#FF952A]"
               placeholder="you@gmail.com"
             />
           </div>
@@ -65,7 +65,7 @@ const ContactCTA = () => {
             <label className="block text-sm font-medium mb-1">Message*</label>
             <textarea
               required
-              className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 h-32 resize-none focus:outline-orange-500"
+              className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 h-32 resize-none focus:outline-[#FF952A]"
               placeholder="Type your message here..."
             ></textarea>
           </div>
@@ -82,7 +82,7 @@ const ContactCTA = () => {
                 "Other",
               ].map((service, index) => (
                 <label key={index} className="flex items-center space-x-2">
-                  <input type="checkbox" className="accent-orange-500" />
+                  <input type="checkbox" className="accent-[#FF952A]" />
                   <span>{service}</span>
                 </label>
               ))}
@@ -92,7 +92,7 @@ const ContactCTA = () => {
             <div className="flex justify-center">
             <button
               type="submit"
-              className="bg-orange-500 text-black py-2 px-6 rounded-lg hover:bg-orange-600 transition"
+              className="bg-[#FF952A] text-black py-2 px-6 rounded-lg hover:bg-orange-500 transition"
             >
               Send
             </button>

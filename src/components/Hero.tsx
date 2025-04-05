@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div id="about" className="container mx-auto px-4 min-h-[80vh] flex items-center justify-center mt-[78px] ">
+    <div id="about" className="container mx-auto px-4 min-h-[80vh] flex items-center justify-center mt-[70px] ">
       <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl w-full text-center md:text-left">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -12,7 +12,7 @@ const Hero = () => {
           className="flex flex-col items-center md:items-start"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Hi, I'm Talha Hanif</h1>
-          <h2 className="text-4xl md:text-6xl font-bold text-orange-500 mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-[#FF952A] mb-6">
             UI/UX Designer
           </h2>
           <p className="text-gray-400 text-lg mb-8 max-w-lg">
@@ -36,14 +36,18 @@ const Hero = () => {
   transition={{ duration: 1.2, ease: "easeInOut" }}
   className="relative w-full max-w-[450px] md:max-w-[500px] mx-auto md:mx-0 flex justify-center"
 >
-  <div className="relative w-[320px] h-[420px] flex items-center justify-center shadow-lg">
-    <div className="bg-orange-500 rounded-t-[150px] w-[320px] h-[280px] absolute top-[73%] left-0 transform -translate-y-[70%] z-[-1]"></div>
-    <img
-      src="hero.png"
-      alt="Talha Hanif"
-      className="h-[380px] w-auto object-contain"
-    />
-  </div>
+<div className="relative w-[320px] h-[420px] flex justify-center items-end shadow-lg">
+  {/* Background orange rounded div */}
+  <div className="left-[31%] bottom-[2%] bg-[#FF952A] rounded-t-[150px] w-[280px] h-[320px] absolute bottom-0 left-0 z-[-1]"></div>
+
+  {/* Hero image */}
+  <img
+    src="hero.png"
+    alt="Talha Hanif"
+    className="h-[440px] w-auto object-contain absolute bottom-0 left-[50%] transform -translate-x-[15%]"
+  />
+</div>
+
 </motion.div>
 
       </div>

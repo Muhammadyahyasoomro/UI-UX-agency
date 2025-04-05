@@ -35,7 +35,7 @@ const Projects = () => {
           ))}
            <div className="mt-auto flex justify-center items-center ">
         <a
-          href="/projects"
+          href="https://www.behance.net/talhahanif"
           className="relative px-6 py-3 text-lg font-medium border border-white rounded-2xl overflow-hidden group"
         >
           <span className="relative z-10 text-white transition-colors duration-300 group-hover:text-black">

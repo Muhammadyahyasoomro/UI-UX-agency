@@ -14,7 +14,7 @@ const Milestone: React.FC<MilestoneProps> = ({ number, label }) => {
   return (
     <div ref={ref} className="text-center px-8">
       <motion.div
-        className="text-4xl font-bold text-primary mb-2"
+        className="text-4xl font-bold text-[#FF952A] mb-2"
         initial={{ scale: 0 }}
         animate={inView ? { scale: 1 } : {}}
         transition={{ duration: 0.5, ease: "easeOut" }}

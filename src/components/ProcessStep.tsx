@@ -18,7 +18,7 @@ const ProcessStep: React.FC<ProcessStepProps> = ({ icon, title, description, ind
       className="flex-none w-[300px] bg-dark-secondary p-6 rounded-2xl"
     >
       <div className="bg-primary/10 p-3 rounded-lg w-fit mb-4">
-        <div className="text-primary">{icon}</div>
+        <div className="text-[#FF952A]">{icon}</div>
       </div>
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
       <p className="text-gray-400 text-sm">{description}</p>

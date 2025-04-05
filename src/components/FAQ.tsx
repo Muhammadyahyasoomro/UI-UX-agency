@@ -34,7 +34,7 @@ const FAQ = () => {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <h2 className="text-center text-3xl font-bold mb-8 underline decoration-primary">
+      <h2 className="text-center text-3xl font-bold mb-8">
         Here’s some of FAQs
       </h2>
       <div className="max-w-2xl mx-auto">
