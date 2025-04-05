@@ -1,3 +1,5 @@
+import { SiGmail, SiLinkedin, SiBehance } from "react-icons/si";
+
 const ContactCTA = () => {
   return (
     <div className="bg-black min-h-screen flex items-center justify-center px-4 py-16">
@@ -15,19 +17,19 @@ const ContactCTA = () => {
           {/* Contact Items */}
           <div className="space-y-4">
             <ContactItem
-              icon="📧"
+              icon={ <SiGmail className="hover:text-[#FF952A]" />}
               label="Email"
               value="talhahanif120@gmail.com"
               link="mailto:talhahanif120@gmail.com"
             />
             <ContactItem
-              icon="🔗"
+              icon={<SiLinkedin className="hover:text-[#FF952A]" />}
               label="LinkedIn"
               value="Talha Hanif"
               link="https://www.linkedin.com/in/talha-hanif-59173a221/"
             />
             <ContactItem
-              icon="🎨"
+              icon={<SiBehance className="hover:text-[#FF952A]" />}
               label="Behance"
               value="behance.net/talhahanif"
               link="https://www.behance.net/talhahanif"
