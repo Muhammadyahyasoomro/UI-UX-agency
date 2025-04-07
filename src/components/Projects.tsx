@@ -18,6 +18,11 @@ const projects = [
     description: "Adventure planning platform",
     image: "./3.png",
   },
+  {
+    title: "Travel App",
+    description: "Adventure planning platform",
+    image: "./4.png",
+  },
 ];
 
 const Projects = () => {
