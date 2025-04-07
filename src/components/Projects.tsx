@@ -19,8 +19,8 @@ const projects = [
     image: "./3.png",
   },
   {
-    title: "Travel App",
-    description: "Adventure planning platform",
+    title: "Ecommerce Shop",
+    description: "Ecommerce shop platform selling electronic products",
     image: "./4.png",
   },
 ];
