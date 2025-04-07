@@ -6,17 +6,17 @@ const projects = [
   {
     title: "Nutritionic App",
     description: "Health and nutrition tracking platform",
-    image: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=800&auto=format&fit=crop&q=60",
+    image: "/1.png",
   },
   {
     title: "Bike Store",
     description: "E-commerce for premium bikes",
-    image: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=800&auto=format&fit=crop&q=60",
+    image: "./2.jpg",
   },
   {
     title: "Travel App",
     description: "Adventure planning platform",
-    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&auto=format&fit=crop&q=60",
+    image: "./3.png",
   },
 ];
 
