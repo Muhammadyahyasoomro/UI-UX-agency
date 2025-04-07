@@ -43,13 +43,13 @@ const WorkingProcess = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="h-screen overflow-hidden  text-white">
+    <div ref={containerRef} className="h-screen overflow-hidden text-white">
       <div className="container mx-auto px-4 py-20">
         <h2 className="text-3xl font-bold text-center mb-10">Working Process</h2>
 
         <div
           ref={scrollWrapperRef}
-          className="flex w-[200%] gap-6 flex-nowrap"
+          className="flex w-[400%] gap-6 flex-nowrap"
         >
           {processSteps.map((step, index) => (
             <div key={index} className="flex items-center w-screen px-10">
