@@ -17,12 +17,12 @@ const projects = [
     image: "./3.jpg",
   },
   {
-    title: "Bike Store",
-    description: "E-commerce for premium bikes",
+    title: "E-Wallet",
+    description: "E-commerce Payment Gateway System",
     image: "./2.jpg",
   },
   {
-    title: "Nutritionic App",
+    title: "Fitness App",
     description: "Health and nutrition tracking platform",
     image: "/3.png",
   },
@@ -48,7 +48,8 @@ const Projects = () => {
           ))}
            <div className="mt-auto flex justify-center items-center ">
         <a
-          href="https://www.behance.net/talhahanif"
+        onClick={() => window.open("https://www.behance.net/talhahanif", "_blank")}
+        
           className="relative px-6 py-3 text-lg font-medium border border-white rounded-2xl overflow-hidden group"
         >
           <span className="relative z-10 text-white transition-colors duration-300 group-hover:text-black">
