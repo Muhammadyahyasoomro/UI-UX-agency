@@ -15,12 +15,12 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, scrollProgress, cardIndex }) => {
   // Control opacity and Y position for stacking effect
   const opacity = useTransform(scrollProgress, [cardIndex * 0.2, (cardIndex + 1) * 0.2], [1, 1]); // Always 1
-  const y = useTransform(scrollProgress, [cardIndex * 0.2, (cardIndex + 1) * 0.2], [290, 0]); // Moves into position
+  const y = useTransform(scrollProgress, [cardIndex * 0.2, (cardIndex + 1) * 0.2], [390, 0]); // Moves into position
   
   return (
     <motion.div
       style={{ opacity, y }}
-      className="absolute top-0  transform -translate-x-1/2 w-[65vw] h-[90vh] bg-dark-secondary rounded-2xl overflow-hidden"
+      className="absolute top-0  transform -translate-x-1/2 w-[65vw] bg-dark-secondary rounded-2xl overflow-hidden"
     >
       <div className="relative overflow-hidden">
         <img
@@ -30,7 +30,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, scrollProgress, card
         />
       </div>
       <div className="p-6 text-center">
-        <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+        <h3 className="text-xl font-semibold ">{project.title}</h3>
         <p className="text-gray-400">{project.description}</p>
       </div>
     </motion.div>
