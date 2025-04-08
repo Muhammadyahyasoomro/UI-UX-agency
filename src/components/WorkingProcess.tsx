@@ -8,10 +8,26 @@ import "./scroll.css";
 gsap.registerPlugin(ScrollTrigger);
 
 const processSteps = [
-  { icon: <Search className="w-6 h-6 text-white" />, title: "Research", description: "We start by understanding your goals, target audience, and competitors." },
-  { icon: <Layout className="w-6 h-6 text-white" />, title: "Wireframing", description: "We sketch out the structure of your design with wireframes and prototypes." },
-  { icon: <Palette className="w-6 h-6 text-white" />, title: "UI Design", description: "Using modern trends, we create user-friendly interfaces with branding consistency." },
-  { icon: <TestTube className="w-6 h-6 text-white" />, title: "Testing & Refinement", description: "We test, gather feedback, and refine for a polished experience." },
+  {
+    icon: <Search className="w-6 h-6 text-white" />,
+    title: "Research",
+    description: "We start by understanding your goals, target audience, and competitors.",
+  },
+  {
+    icon: <Layout className="w-6 h-6 text-white" />,
+    title: "Wireframing",
+    description: "We sketch out the structure of your design with wireframes and prototypes.",
+  },
+  {
+    icon: <Palette className="w-6 h-6 text-white" />,
+    title: "UI Design",
+    description: "Using modern trends, we create user-friendly interfaces with branding consistency.",
+  },
+  {
+    icon: <TestTube className="w-6 h-6 text-white" />,
+    title: "Testing & Refinement",
+    description: "We test, gather feedback, and refine for a polished experience.",
+  },
 ];
 
 const WorkingProcess = () => {
@@ -49,12 +65,12 @@ const WorkingProcess = () => {
 
         <div
           ref={scrollWrapperRef}
-          className="flex w-[400%] gap-6 flex-nowrap"
+          className="flex flex-nowrap px-2"
         >
           {processSteps.map((step, index) => (
-            <div key={index} className="flex items-center w-screen px-10">
+            <div key={index} className="flex items-center min-w-[50vw]">
               {/* Step Card */}
-              <div className="p-6 w-full max-w-md bg-gradient-to-b from-gray-600 to-[#1111]/80 text-white rounded-lg shadow-lg flex flex-col backdrop-blur-md">
+              <div className="p-4 w-full max-w-sm bg-gradient-to-b from-gray-600 to-[#1111]/80 text-white rounded-lg shadow-lg flex flex-col backdrop-blur-md">
                 <h3 className="text-lg font-bold">Step {index + 1}</h3>
                 <h4 className="text-xl font-semibold text-[#FF952A] flex items-center gap-2">
                   {step.title} {step.icon}
@@ -64,7 +80,7 @@ const WorkingProcess = () => {
 
               {/* Arrow */}
               {index !== processSteps.length - 1 && (
-                <ChevronRight className="w-8 h-8 text-[#FF952A] mx-4 hidden md:block" />
+                <ChevronRight className="w-6 h-6 text-[#FF952A] mx-2 hidden md:block" />
               )}
             </div>
           ))}
