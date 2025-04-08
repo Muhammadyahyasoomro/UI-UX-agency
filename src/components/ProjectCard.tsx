@@ -20,7 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, scrollProgress, card
   return (
     <motion.div
       style={{ opacity, y }}
-      className="absolute top-0  transform -translate-x-1/2 w-[70carvw] h-[65vh] bg-dark-secondary rounded-2xl overflow-hidden"
+      className="absolute top-0  transform -translate-x-1/2 w-[70vw] h-[65vh] bg-dark-secondary rounded-2xl overflow-hidden"
     >
       <div className="relative overflow-hidden">
         <img
