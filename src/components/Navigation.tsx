@@ -44,7 +44,7 @@ const Navigation = () => {
       }`}
     >
       {/* Logo */}
-      <div className="text-[#FF952A] text-2xl font-bold">Oneclick</div>
+      <div className="text-[#FF952A] text-2xl font-bold">Talha Hanif</div>
 
       {/* Desktop Navigation */}
       <div className="hidden sm:flex gap-8">
