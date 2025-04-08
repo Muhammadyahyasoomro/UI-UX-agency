@@ -4,11 +4,7 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   
-  {
-    title: "Travel App",
-    description: "Adventure planning platform",
-    image: "./3.png",
-  },
+ 
   {
     title: "Ecommerce Shop",
     description: "Ecommerce shop platform selling electronic products",
