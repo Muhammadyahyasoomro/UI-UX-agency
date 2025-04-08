@@ -16,7 +16,7 @@ const projects = [
   {
     title: "Ecommerce Shop",
     description: "Ecommerce shop platform selling electronic products",
-    image: "./4.png",
+    image: "./3.jpg",
   },
   {
     title: "Travel App",
