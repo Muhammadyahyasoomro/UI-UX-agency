@@ -3,15 +3,11 @@ import { motion, useScroll } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 
 const projects = [
+  
   {
-    title: "Nutritionic App",
-    description: "Health and nutrition tracking platform",
-    image: "/1.png",
-  },
-  {
-    title: "Bike Store",
-    description: "E-commerce for premium bikes",
-    image: "./2.jpg",
+    title: "Travel App",
+    description: "Adventure planning platform",
+    image: "./3.png",
   },
   {
     title: "Ecommerce Shop",
@@ -19,11 +15,18 @@ const projects = [
     image: "./3.jpg",
   },
   {
-    title: "Travel App",
-    description: "Adventure planning platform",
-    image: "./3.png",
+    title: "Bike Store",
+    description: "E-commerce for premium bikes",
+    image: "./2.jpg",
+  },
+  {
+    title: "Nutritionic App",
+    description: "Health and nutrition tracking platform",
+    image: "/1.png",
   },
   
+ 
+ 
 
 
 ];
