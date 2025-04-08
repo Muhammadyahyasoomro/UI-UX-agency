@@ -3,9 +3,15 @@ import { motion, useScroll } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 
 const projects = [
-  
+  {
+    
+    title: "Ecommerce Shop",
+    description: "Ecommerce shop platform selling electronic products",
+    image: "./1.png",
+  }, 
  
   {
+
     title: "Ecommerce Shop",
     description: "Ecommerce shop platform selling electronic products",
     image: "./3.jpg",
@@ -18,7 +24,7 @@ const projects = [
   {
     title: "Nutritionic App",
     description: "Health and nutrition tracking platform",
-    image: "/1.png",
+    image: "/3.png",
   },
   
  
