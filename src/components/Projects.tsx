@@ -6,7 +6,7 @@ const projects = [
   {
     
     title: "Ecommerce Shop",
-    description: "Ecommerce shop platform selling electronic products",
+    description: "Ecommerce shop platform selling Bikes",
     image: "./1.png",
   }, 
  
