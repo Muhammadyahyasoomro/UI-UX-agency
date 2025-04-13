@@ -1,90 +1,33 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { Search, Layout, Palette, TestTube, ChevronRight } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./scroll.css";
-
-gsap.registerPlugin(ScrollTrigger);
+import { Carousel } from "./Carousel";
+import Heading from "./Heading";
 
 const processSteps = [
   {
-    icon: <Search className="w-6 h-6 text-white" />,
-    title: "Research",
-    description: "We start by understanding your goals, target audience, and competitors.",
+    title: "Research", button: "Explore Research", src: "reasearch.png",
   },
-  {
-    icon: <Layout className="w-6 h-6 text-white" />,
-    title: "Wireframing",
-    description: "We sketch out the structure of your design with wireframes and prototypes.",
-  },
-  {
-    icon: <Palette className="w-6 h-6 text-white" />,
-    title: "UI Design",
-    description: "Using modern trends, we create user-friendly interfaces with branding consistency.",
-  },
-  {
-    icon: <TestTube className="w-6 h-6 text-white" />,
-    title: "Testing & Refinement",
-    description: "We test, gather feedback, and refine for a polished experience.",
-  },
+  { title: "Wireframing", button: "Explore Wireframing", src: "wireframing.png", },
+  { title: "UI Design", button: "Explore UI", src: "ui.jpg", },
+  { title: "Testing & Refinement", button: "Explore Testing", src: "testing.png", },
 ];
 
 const WorkingProcess = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const scrollWrapperRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    const scrollContent = scrollWrapperRef.current;
-    if (!container || !scrollContent) return;
-
-    const sections = gsap.utils.toArray(scrollContent.children);
-
-    gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: container,
-        pin: true,
-        scrub: 1,
-        start: "top top",
-        end: () => `+=${scrollContent.scrollWidth}`,
-      },
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
+  // Convert processSteps to the format expected by the Carousel component
 
   return (
-    <div ref={containerRef} className="h-screen overflow-hidden text-white">
-      <div className="container mx-auto px-4 py-20">
-        <h2 className="text-3xl font-bold text-center mb-10">Working Process</h2>
+    <div id="process" className="py-20 text-white relative">
+      <div className="container mx-auto px-4">
+        <Heading text="Working Process" />
 
-        <div
-          ref={scrollWrapperRef}
-          className="flex flex-nowrap px-2"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative overflow-hidden w-full h-full pb-16"
         >
-          {processSteps.map((step, index) => (
-            <div key={index} className="flex items-center min-w-[50vw]">
-              {/* Step Card */}
-              <div className="p-4 w-full max-w-sm bg-gradient-to-b from-gray-600 to-[#1111]/80 text-white rounded-lg shadow-lg flex flex-col backdrop-blur-md">
-                <h3 className="text-lg font-bold">Step {index + 1}</h3>
-                <h4 className="text-xl font-semibold text-[#FF952A] flex items-center gap-2">
-                  {step.title} {step.icon}
-                </h4>
-                <p className="text-sm mt-2">{step.description}</p>
-              </div>
-
-              {/* Arrow */}
-              {index !== processSteps.length - 1 && (
-                <ChevronRight className="w-6 h-6 text-[#FF952A] mx-2 hidden md:block" />
-              )}
-            </div>
-          ))}
-        </div>
+          <Carousel slides={processSteps} />
+        </motion.div>
       </div>
     </div>
   );
