@@ -1,6 +1,6 @@
 import { SiGmail, SiLinkedin, SiBehance } from "react-icons/si";
 import { useState } from "react";
-import toast from "react-hot-toast"; // Make sure you have react-hot-toast installed
+import toast from "react-hot-toast";
 
 const ContactCTA = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +18,7 @@ const ContactCTA = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmittedSuccessfully, setIsSubmittedSuccessfully] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -41,6 +42,7 @@ const ContactCTA = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setIsSubmittedSuccessfully(false);
 
     const selectedServices = Object.entries(formData.services)
       .filter(([_, isSelected]) => isSelected)
@@ -56,14 +58,13 @@ const ContactCTA = () => {
     try {
       const response = await fetch("https://formspree.io/f/xpwpygyb", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dataToSubmit),
       });
 
       if (response.ok) {
         toast.success("Message sent successfully!");
+        setIsSubmittedSuccessfully(true);
         setFormData({
           name: "",
           email: "",
@@ -101,7 +102,6 @@ const ContactCTA = () => {
             </p>
           </div>
 
-          {/* Contact Items */}
           <div className="space-y-4">
             <ContactItem
               icon={<SiGmail className="hover:text-[#FF952A]" />}
@@ -139,6 +139,7 @@ const ContactCTA = () => {
               required
               className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#FF952A]"
               placeholder="Your name"
+              disabled={isSubmitting}
             />
           </div>
           <div>
@@ -151,6 +152,7 @@ const ContactCTA = () => {
               required
               className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 focus:outline-none focus:outline-[#FF952A]"
               placeholder="you@gmail.com"
+              disabled={isSubmitting}
             />
           </div>
           <div>
@@ -162,6 +164,7 @@ const ContactCTA = () => {
               required
               className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 h-32 resize-none focus:outline-none focus:outline-[#FF952A]"
               placeholder="Type your message here..."
+              disabled={isSubmitting}
             ></textarea>
           </div>
 
@@ -182,6 +185,7 @@ const ContactCTA = () => {
                     name={service.name}
                     checked={(formData.services as any)[service.name]}
                     onChange={handleCheckboxChange}
+                    disabled={isSubmitting}
                     className="accent-[#FF952A]"
                   />
                   <span>{service.label}</span>
@@ -194,18 +198,46 @@ const ContactCTA = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-[#FF9933] text-black font-medium py-3 px-8 rounded-lg hover:bg-[#e88a2a] transition-colors disabled:opacity-70"
+              className="bg-[#FF9933] text-black font-medium py-3 px-8 rounded-lg hover:bg-[#e88a2a] transition-colors disabled:opacity-70 flex items-center gap-2"
             >
+              {isSubmitting && (
+                <svg
+                  className="animate-spin h-5 w-5 text-black"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v8H4z"
+                  ></path>
+                </svg>
+              )}
               {isSubmitting ? "Sending..." : "Send"}
             </button>
           </div>
+
+          {/* Permanent Message After Submission */}
+          {isSubmittedSuccessfully && (
+            <div className="text-center text-green-400 font-medium mt-4 transition-opacity duration-500">
+              ✅ Thanks for reaching out! We'll connect with you very soon.
+            </div>
+          )}
         </form>
       </div>
     </div>
   );
 };
 
-// Reusable component for contact info
 type ContactItemProps = {
   icon: JSX.Element;
   label: string;
