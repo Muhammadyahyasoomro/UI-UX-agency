@@ -20,18 +20,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, scrollProgress, card
   return (
     <motion.div
       style={{ opacity, y }}
-      className="absolute top-0  transform -translate-x-1/2 w-[70vw] h-[65vh] bg-dark-secondary rounded-2xl overflow-hidden"
+      className={`absolute top-0 transform -translate-x-1/2 w-[65vw] ${
+      cardIndex === 2 ? "h-[84vh]" : "h-[80vh]"
+      } bg-dark-secondary rounded-2xl overflow-hidden`}
     >
       <div className="relative overflow-hidden">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500"
-        />
+      <img
+        src={project.image}
+        alt={project.title}
+        className="w-full h-68 object-cover transform group-hover:scale-105 transition-transform duration-500"
+      />
       </div>
       <div className="p-6 text-center">
-        <h3 className="text-xl font-semibold ">{project.title}</h3>
-        <p className="text-gray-400">{project.description}</p>
+      <h3 className="text-xl font-semibold ">{project.title}</h3>
+      <p className="text-gray-400">{project.description}</p>
       </div>
     </motion.div>
   );

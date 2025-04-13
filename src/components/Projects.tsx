@@ -7,14 +7,14 @@ const projects = [
     
     title: "Ecommerce Shop",
     description: "Ecommerce shop platform selling Bikes",
-    image: "./1.png",
+    image: "./final1.jpg",
   }, 
  
   {
 
     title: "Ecommerce Shop",
     description: "Ecommerce shop platform selling electronic products",
-    image: "./3.jpg",
+    image: "./Final2.jpg",
   },
   {
     title: "E-Wallet",
@@ -24,7 +24,7 @@ const projects = [
   {
     title: "Fitness App",
     description: "Health and nutrition tracking platform",
-    image: "/3.png",
+    image: "/Final3.jpg",
   },
   
  
