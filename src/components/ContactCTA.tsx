@@ -1,6 +1,6 @@
 import { SiGmail, SiLinkedin, SiBehance } from "react-icons/si";
-import { useState } from "react";
-import toast from "react-hot-toast";
+import { useState, useRef } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const ContactCTA = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +19,10 @@ const ContactCTA = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmittedSuccessfully, setIsSubmittedSuccessfully] = useState(false);
+
+  const emailRef = useRef<HTMLInputElement>(null);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -62,6 +66,8 @@ const ContactCTA = () => {
         body: JSON.stringify(dataToSubmit),
       });
 
+      const responseData = await response.json();
+
       if (response.ok) {
         toast.success("Message sent successfully!");
         setIsSubmittedSuccessfully(true);
@@ -78,6 +84,20 @@ const ContactCTA = () => {
             other: false,
           },
         });
+      } else if (response.status === 422 && responseData?.errors?.length) {
+        const fieldError = responseData.errors[0];
+        toast.error(`❌ ${fieldError.message}`, {
+          icon: "⚠️",
+        });
+
+        // Focus field based on error field
+        if (fieldError.field === "email") {
+          emailRef.current?.focus();
+        } else if (fieldError.field === "name") {
+          nameRef.current?.focus();
+        } else if (fieldError.field === "message") {
+          messageRef.current?.focus();
+        }
       } else {
         toast.error("Failed to send message. Please try again.");
       }
@@ -91,6 +111,7 @@ const ContactCTA = () => {
 
   return (
     <div className="bg-black min-h-screen flex items-center justify-center px-4 py-16">
+      <Toaster position="top-right" reverseOrder={false} />
       <div className="bg-[#FF952A] p-6 rounded-3xl flex flex-col md:flex-row w-full max-w-6xl gap-8">
         {/* Left Panel - Contact Info */}
         <div className="flex-1 text-black flex flex-col justify-between gap-6">
@@ -136,6 +157,7 @@ const ContactCTA = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
+              ref={nameRef}
               required
               className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#FF952A]"
               placeholder="Your name"
@@ -149,8 +171,9 @@ const ContactCTA = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
+              ref={emailRef}
               required
-              className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 focus:outline-none focus:outline-[#FF952A]"
+              className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#FF952A]"
               placeholder="you@gmail.com"
               disabled={isSubmitting}
             />
@@ -161,8 +184,9 @@ const ContactCTA = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
+              ref={messageRef}
               required
-              className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 h-32 resize-none focus:outline-none focus:outline-[#FF952A]"
+              className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-[#FF952A]"
               placeholder="Type your message here..."
               disabled={isSubmitting}
             ></textarea>
@@ -226,7 +250,6 @@ const ContactCTA = () => {
             </button>
           </div>
 
-          {/* Permanent Message After Submission */}
           {isSubmittedSuccessfully && (
             <div className="text-center text-green-400 font-medium mt-4 transition-opacity duration-500">
               ✅ Thanks for reaching out! We'll connect with you very soon.
