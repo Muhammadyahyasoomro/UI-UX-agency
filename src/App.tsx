@@ -19,7 +19,7 @@ function App() {
       <Milestones />
       <Services/>
       <WorkingProcess />
-      <DesignProcessShowcase/>
+
       <FAQ/>
       <ContactCTA/>
     </div>

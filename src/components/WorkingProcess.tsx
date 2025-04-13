@@ -1,15 +1,14 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Carousel } from "./Carousel";
 import Heading from "./Heading";
 
 const processSteps = [
   {
-    title: "Research", button: "Explore Research", src: "reasearch.png",
+    title: "Research", button: "Explore Research", src: "/carousel/research.jpg",
   },
-  { title: "Wireframing", button: "Explore Wireframing", src: "wireframing.png", },
-  { title: "UI Design", button: "Explore UI", src: "ui.jpg", },
-  { title: "Testing & Refinement", button: "Explore Testing", src: "testing.png", },
+  { title: "Wireframing", button: "Explore Wireframing", src: "/carousel/WireFraming.png", },
+  { title: "UI Design", button: "Explore UI", src: "/carousel/UIDesign.png", },
+  { title: "Testing & Refinement", button: "Explore Testing", src: "/carousel/testing.png", },
 ];
 
 const WorkingProcess = () => {
@@ -18,7 +17,7 @@ const WorkingProcess = () => {
   return (
     <div id="process" className="py-20 text-white relative">
       <div className="container mx-auto px-4">
-        <Heading text="Working Process" />
+        <Heading text="Design Process" />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
