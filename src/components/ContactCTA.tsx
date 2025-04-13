@@ -86,8 +86,8 @@ const ContactCTA = () => {
         });
       } else if (response.status === 422 && responseData?.errors?.length) {
         const fieldError = responseData.errors[0];
-        toast.error(`❌ ${fieldError.message}`, {
-          icon: "⚠️",
+        toast.error(`Input field  ${fieldError.message}`, {
+          
         });
 
         // Focus field based on error field
