@@ -137,7 +137,7 @@ const ContactCTA = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 focus:outline-[#FF952A]"
+              className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#FF952A]"
               placeholder="Your name"
             />
           </div>
@@ -149,7 +149,7 @@ const ContactCTA = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 focus:outline-[#FF952A]"
+              className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 focus:outline-none focus:outline-[#FF952A]"
               placeholder="you@gmail.com"
             />
           </div>
@@ -160,7 +160,7 @@ const ContactCTA = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 h-32 resize-none focus:outline-[#FF952A]"
+              className="w-full p-2 rounded-md bg-gray-800 border border-gray-600 h-32 resize-none focus:outline-none focus:outline-[#FF952A]"
               placeholder="Type your message here..."
             ></textarea>
           </div>
