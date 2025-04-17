@@ -110,7 +110,7 @@ const ContactCTA = () => {
   };
 
   return (
-    <div className="bg-black min-h-screen flex items-center justify-center px-4 py-16">
+    <section id="Contact">    <div className="bg-black min-h-screen flex items-center justify-center px-4 py-16">
       <Toaster position="top-right" reverseOrder={false} />
       <div className="bg-[#FF952A] p-6 rounded-3xl flex flex-col md:flex-row w-full max-w-6xl gap-8">
         {/* Left Panel - Contact Info */}
@@ -258,6 +258,8 @@ const ContactCTA = () => {
         </form>
       </div>
     </div>
+    </section>
+
   );
 };
 

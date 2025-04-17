@@ -98,7 +98,9 @@ const Navigation = () => {
       </div>
 
       {/* Contact Button */}
-      <button className="bg-[#FF952A] text-white px-6 py-2 rounded-lg hover:bg-orange-500 transition hidden sm:block">
+      <button onClick={()=>{
+        window.open("#Contact", "_self")
+      }} className="bg-[#FF952A] text-white px-6 py-2 rounded-lg hover:bg-orange-500 transition hidden sm:block">
         Contact
       </button>
     </nav>
