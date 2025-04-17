@@ -71,7 +71,9 @@ const Hero = () => {
             ))}
           </motion.p>
 
-          <button className="bg-gray-700 text-white px-8 py-3 rounded-2xl hover:bg-gray-600 transition-colors">
+          <button onClick={()=>{
+            window.open("#services", "_self")
+          }} className="bg-gray-700 text-white px-8 py-3 rounded-2xl hover:bg-gray-600 transition-colors">
             Services
           </button>
         </motion.div>
